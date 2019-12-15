@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".controllers.MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="@android:dimen/notification_large_icon_height">
+        <Button
+            android:id="@+id/btn_scan_sms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SCAN"
+            android:textAllCaps="false"
+            android:background="@drawable/button_background_style" />
+
+        <RadioGroup
+            android:id="@+id/rg_sms_locations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:checkedButton="@id/rb_inbox"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/rb_inbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="inbox"/>
+            <RadioButton
+                android:id="@+id/rb_sent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sent"/>
+            <RadioButton
+                android:id="@+id/rb_outbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="outbox"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_all_sms"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/sms_info_line"
+        android:dividerHeight="6dp"
+
+        />
+</LinearLayout>
